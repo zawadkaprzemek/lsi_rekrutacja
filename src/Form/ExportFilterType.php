@@ -32,10 +32,10 @@ class ExportFilterType extends AbstractType
     {
         $resolver->setDefaults([
             // Configure your form options here
-            'data' =>[
+            'data' => [
                 'place' => null,
-                'date_from' => (new \DateTime('-100 days'))->setTime(0, 0),
-                'date_to' => (new \DateTime())->setTime(23,59, 99),
+                'date_from' => null,
+                'date_to' => new \DateTime(),
             ]
         ]);
     }

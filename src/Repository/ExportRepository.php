@@ -60,6 +60,8 @@ class ExportRepository extends ServiceEntityRepository
 
     public function filterExports(\DateTime $dateFrom, \DateTime $dateTo, ?string $place = null)
     {
+        $dateFrom->setTime(0, 0,);
+        $dateTo->setTime(23, 59, 99);
         $qb = $this->createQueryBuilder('e')
             ->where('e.dateTime between :from AND :to')
             ->setParameters(new ArrayCollection(array(

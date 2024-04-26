@@ -22,9 +22,11 @@ class ExportController extends AbstractController
     {
         $form = $this->createForm(ExportFilterType::class);
         $form->handleRequest($request);
-        $data = $form->getData();
+        if ($form->isSubmitted() && $form->isValid()) {
+            $data = $form->getData();
+        }
 
-        $exports = $this->exportService->loadExports($data);
+        $exports = $this->exportService->loadExports($data ?? []);
         return $this->render('export/index.html.twig', [
             'exports' => $exports,
             'form' => $form->createView(),
