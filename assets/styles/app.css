@@ -1,0 +1,14 @@
+body {
+    background-color: white;
+}
+
+.filterForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    height: 100%;
+}
+
+
+.borde
